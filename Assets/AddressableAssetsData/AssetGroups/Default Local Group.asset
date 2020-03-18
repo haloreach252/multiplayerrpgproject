@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 6129ed5a0224d2845a062bf06681efd6
+  m_SerializeEntries:
+  - m_GUID: 0caf1c0485685f340b3e3c872da6101c
+    m_Address: Assets/Visual/Terrain Layers/Stone.terrainlayer
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 228ed0fc1dcdf1548b085876a8f6f99b
+    m_Address: Assets/Visual/Terrain Layers/Grass.terrainlayer
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 49b18c07e7dd0a547ab8eebcd1e4e6cb
+    m_Address: Assets/Visual/Terrain Layers/Dirt.terrainlayer
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 628f4457d5a3c7f4dbe55c9d6fa1437c
+    m_Address: Assets/Visual/Terrain Layers
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e910666f9d7629449888e4ee24b35365
+    m_Address: Assets/Visual/Terrain Layers/Sand.terrainlayer
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 27607cb826ef9424dbf1a3b35a3f9b17, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: d9393a2bb625df14cb63b5664baee5c3, type: 2}
+    - {fileID: 11400000, guid: 56b289c880f570d479814f11f38c7541, type: 2}

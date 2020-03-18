@@ -1,29 +1,47 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
+using Sirenix.Serialization;
+using MLAPI;
+using MLAPI.Spawning;
+using MLAPI.Connection;
+using MLAPI.Messaging;
 
-public class GameManager : MonoBehaviour {
+[System.Serializable]
+public class GameManager : NetworkedBehaviour {
 
-	public static GameManager instance;
+	public static GameManager Singleton;
 
 	public ItemDatabase itemDatabase;
-	//public LevelProgression levels;
-	public List<PlayerEntity> players;
-	public List<Entity> entities;
+	public Levels levels;
 
-	/// <summary>
-	/// This region has references that only need 1 reference project wide.
-	/// </summary>
 	public GameObject damageCanvas;
 
+	public List<SpawnPoint> spawnPoints;
+
 	private void Awake() {
-		if (instance) {
+		if (Singleton) {
+			Destroy(gameObject);
 			return;
 		}
 
-		instance = this;
-		entities = new List<Entity>();
-		players = new List<PlayerEntity>();
+		Singleton = this;
+		ItemDatabase.Singleton = itemDatabase;
+		Levels.Singleton = levels;
 	}
 
+	private void Start() {
+		foreach (NetworkedClient client in NetworkingManager.Singleton.ConnectedClientsList) {
+			client.PlayerObject.GetComponent<PlayerCreation>().SetupSpawnPoints();
+		}
+	}
+
+	public SpawnPoint GetSpawnPoint(int index) {
+		return spawnPoints[index];
+	}
+
+	public List<SpawnPoint> GetSpawnPoints() {
+		return spawnPoints;
+	}
 }

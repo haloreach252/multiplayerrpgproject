@@ -1,33 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using MLAPI;
+using MLAPI.Spawning;
 
-public class DamageIndicator : MonoBehaviour {
+public class DamageIndicator : NetworkedBehaviour {
 
 	public Text damageText;
 	private float timer;
 
 	private void Start() {
-		timer = 5f;
+		timer = 1.5f;
+		Destroy(gameObject, timer);
 	}
 
 	private void Update() {
-		timer -= Time.deltaTime;
-		if(timer <= 0) {
-			Destroy(gameObject);
-		}
-
+		transform.LookAt(SpawnManager.GetLocalPlayerObject().transform);
+		transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
 		damageText.transform.Translate(0, 0.01f, 0);
 	}
 
 	public void SetText(float damage, bool critical) {
-		if (critical) {
-			damageText.color = Color.red;
-		} else {
-			damageText.color = Color.black;
-		}
-
+		damageText.color = critical ? Color.red : Color.black;
 		damageText.text = damage.ToString();
 	}
 

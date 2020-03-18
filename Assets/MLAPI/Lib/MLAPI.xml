@@ -1322,6 +1322,14 @@
             <param name="secondsAgo">The amount of seconds</param>
             <param name="action">The action to invoke when time is turned back</param>
         </member>
+        <member name="M:MLAPI.LagCompensation.LagCompensationManager.Simulate(System.Single,System.Collections.Generic.IList{MLAPI.LagCompensation.TrackedObject},System.Action)">
+            <summary>
+            Turns time back a given amount of second on the given objects, invokes an action and turns it back
+            </summary>
+            <param name="secondsAgo">The amount of seconds</param>
+            <param name="simulatedObjects">The object to simulate back in time</param>
+            <param name="action">The action to invoke when time is turned back</param>
+        </member>
         <member name="M:MLAPI.LagCompensation.LagCompensationManager.Simulate(System.UInt64,System.Action)">
             <summary>
             Turns time back a given amount of seconds, invokes an action and turns it back. The time is based on the estimated RTT of a clientId

@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Wtf
+  m_EditorClassIdentifier: Assembly-CSharp::HouseCreatorSettings
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  housePrefabs:
+  - {fileID: 8762607866179169743, guid: d6094ccb3a54e4d42b0299924970f5d7, type: 3}
+  - {fileID: 6951491145491160197, guid: a49310cc9ce83ce45bdce63ca0c1ea45, type: 3}
+  housePrefabPreviews:
+  - {fileID: 2800000, guid: 17fb5d17b5acfa14a9ca5baf302570e0, type: 3}
+  - {fileID: 2800000, guid: c2f04b29fbad87f4ba7f06896533ce00, type: 3}
+  - {fileID: 2800000, guid: 75df60dac787ea24497cbffc609557ec, type: 3}
+  rotationPreviews:
+  - {fileID: 2800000, guid: 2e3f3924e00cdf64c995fddf58b5a97f, type: 3}
+  - {fileID: 2800000, guid: dfa2d41021893e445974a846a4b56ee3, type: 3}
+  - {fileID: 2800000, guid: a0040d55f93ca5c46893064906726d68, type: 3}
+  - {fileID: 2800000, guid: 68451df7e6c68244f92e03fc0f1a13bb, type: 3}

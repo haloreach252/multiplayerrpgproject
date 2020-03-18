@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: MainPrefabPlacerSettings
+  m_EditorClassIdentifier: Assembly-CSharp-Editor::PrefabPlacerSettings
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  prefabGroupIndex: 0
+  placeablePrefabGroups:
+  - placeablePrefabs:
+    - {fileID: 5619666312556809501, guid: 5bca0e1f13565cb4987c5678228ff919, type: 3}
+    - {fileID: 635627150056856992, guid: b509fcb0acab1c142b1dcf33adbd6ae1, type: 3}
+    - {fileID: 5317736170110483161, guid: 8d6edae4b3658b348a22a342d23ba791, type: 3}
+    - {fileID: 5611167737106596408, guid: 999a02b26157a90479fe11e79b5a0db0, type: 3}
+    randomize: 1
+    randomizeXRot: 0
+    randomizeZRot: 0
+    randomizeYRot: 1
+  prefabParent: {fileID: 0}

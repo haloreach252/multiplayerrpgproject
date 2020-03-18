@@ -5,23 +5,31 @@ using MLAPI;
 
 public class PlayerMove : NetworkedBehaviour {
 
-	public float moveSpeed = 5;
-	public float lookSpeed = 25;
+	public bool useAnimator = false;
 
-	public float lookMin = -25;
-	public float lookMax = 40;
+	public float moveSpeed = 5;
+	public float lookSpeed = 5;
+
+	public float lookMin = -30;
+	public float lookMax = 50;
 
 	/// <summary>
 	/// This is how much you have to move your mouse to look up/down
 	/// </summary>
-	public float lookDeadzone = 0.4f;
+	public float lookDeadzone = 0.15f;
 
 	public GameObject cameraRotate;
+	Animator anim;
+	Rigidbody rb;
 
 	private void Start() {
 		if (!IsLocalPlayer) {
-			GetComponentInChildren<Camera>().gameObject.SetActive(false);
 			return;
+		}
+
+		if (useAnimator) {
+			anim = GetComponent<Animator>();
+			rb = GetComponent<Rigidbody>();
 		}
 
 		Cursor.lockState = CursorLockMode.Locked;
@@ -33,10 +41,32 @@ public class PlayerMove : NetworkedBehaviour {
 			return;
 		}
 
-		float vertical = Input.GetAxis("Vertical");
-		float horizontal = Input.GetAxis("Horizontal");
+		if (useAnimator) {
+			if (Input.GetKey(KeyCode.W)) {
+				anim.SetInteger("move", 1);
+				rb.AddRelativeForce(Vector3.forward * moveSpeed);
+			} else {
+				anim.SetInteger("move", 0);
+			}
 
-		transform.Translate(new Vector3(horizontal, 0, vertical) * moveSpeed * Time.deltaTime);
+			if (Input.GetMouseButtonDown(0)) {
+				anim.SetBool("attack", true);
+			} else {
+				anim.SetBool("attack", false);
+			}
+
+			if (Input.GetKeyDown(KeyCode.Space)) {
+				anim.SetBool("jump", true);
+				rb.AddRelativeForce(Vector3.up * moveSpeed * 1.5f);
+			} else {
+				anim.SetBool("jump", false);
+			}
+		} else {
+			float vertical = Input.GetAxis("Vertical");
+			float horizontal = Input.GetAxis("Horizontal");
+
+			transform.Translate(new Vector3(horizontal, 0, vertical) * moveSpeed * Time.deltaTime);
+		}
 	}
 
 	private void LateUpdate() {

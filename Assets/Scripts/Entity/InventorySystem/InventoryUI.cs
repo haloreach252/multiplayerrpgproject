@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MLAPI;
 
-public class InventoryUI : MonoBehaviour {
+public class InventoryUI : NetworkedBehaviour {
 
 	public GameObject inventoryUIPrefab;
 	private InventoryParent inventoryParent;

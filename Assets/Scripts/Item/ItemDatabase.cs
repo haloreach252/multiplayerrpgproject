@@ -2,13 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemDatabase : MonoBehaviour {
+[CreateAssetMenu()]
+public class ItemDatabase : ScriptableObject {
 
-    void Start() {
-        
-    }
+	public static ItemDatabase Singleton;
 
-    void Update() {
-        
-    }
+	public List<Item> items;
+	public List<LootTable> lootTables;
+
+	public Item GetRandomItem() {
+		return items[Random.Range(0, items.Count)];
+	}
+
+	public Item GetItemById(string itemId) {
+		for (int i = 0; i < items.Count; i++) {
+			if(items[i].itemId == itemId) {
+				return items[i];
+			}
+		}
+		return null;
+	}
+
 }

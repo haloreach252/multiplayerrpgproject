@@ -3,6 +3,7 @@ public class ItemStack {
 	public Item item;
 	public int currentCount;
 
+	#region Constructors
 	public ItemStack() {
 		currentCount = 0;
 		item = null;
@@ -17,8 +18,9 @@ public class ItemStack {
 		currentCount = amount;
 		this.item = item;
 	}
+	#endregion
 
-    public bool PutItem() {
+	public bool PutItem() {
         if (currentCount == item.stackSize || currentCount + 1 > item.stackSize) {
             return false;
         } else {

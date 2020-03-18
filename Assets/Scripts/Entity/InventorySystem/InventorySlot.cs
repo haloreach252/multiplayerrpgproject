@@ -1,12 +1,14 @@
 ﻿using UnityEngine.UI;
 using UnityEngine;
+using MLAPI;
 
-public class InventorySlot : MonoBehaviour {
+public class InventorySlot : NetworkedBehaviour {
 	public Image icon;
 	public Button removeButton;
 	public Text amountText;
 
 	public InventoryUI parentInventory;
+	public PlayerInventory playerInventory;
 
 	protected ItemStack itemStack;
 	protected Item item;
@@ -14,6 +16,8 @@ public class InventorySlot : MonoBehaviour {
 	public void AddItem(ItemStack newItem) {
 		itemStack = newItem;
 		item = newItem.item;
+
+		GetComponent<Image>().color = Color.white;
 
 		amountText.text = newItem.currentCount.ToString();
 
@@ -26,6 +30,8 @@ public class InventorySlot : MonoBehaviour {
 		itemStack = null;
 		item = null;
 
+		GetComponent<Image>().color = Color.gray;
+
 		amountText.text = string.Empty;
 
 		icon.sprite = null;
@@ -34,11 +40,7 @@ public class InventorySlot : MonoBehaviour {
 	}
 
 	public virtual void OnRemoveButton(bool transfer) {
-		if (transfer) {
-			//parentInventory.Transfer(itemStack, GameManager.instance.playerEntity.GetBehaviour<EntityInventory>().inventoryUI);
-		} else {
-			parentInventory.RemoveItem(itemStack);
-		}
+		Debug.LogError("Clicked remove button");
 	}
 
 	public void UseItem() {
